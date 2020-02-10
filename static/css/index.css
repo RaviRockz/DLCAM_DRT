@@ -1,0 +1,206 @@
+html, body {
+    background-color: ghostwhite;
+    font-size: 1em;
+    color: rgba(0,0,0,.87);
+    font-family: 'Open Sans', Georgia, serif;
+    font-weight: 300;
+    scroll-behavior: smooth;
+}
+
+.hero {
+    background-image: url(../images/19682.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container            {padding-top: 4rem;}
+.container.md-padding {padding-top: 2rem;}
+.container.sm-padding {padding-top: 1rem;}
+.container.no-padding {padding-top: 0;}
+.row {padding-bottom: 2rem}
+
+.container.gb            {padding-top: 2rem;}
+.container.gb.md-padding {padding-top: 1rem;}
+.container.gb.sm-padding {padding-top: 0.5rem;}
+.container.gb.no-padding {padding-top: 0;}
+
+
+h1, h3, h4, p {
+    font-family: 'Raleway', Helvetica, sans-serif;
+    letter-spacing: 0.04rem;
+}
+h1 {
+    font-size: 3rem;
+    color:  #FFFFFF;
+    margin: 0;
+    font-weight: 300;
+}
+
+h1.dd{
+    font-size: 2.3rem;
+}
+
+h3, h4{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 300;
+    color:  rgba(0,0,0,.87);
+}
+
+h3 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.light {color: #FFFFFF;}
+.ddp {
+    font-weight: 300;
+    color:  rgba(0,0,0,.87);
+    font-size: 1.2rem;
+}
+p {
+    text-align: justify;
+}
+.whitespace-md {margin-bottom: 2rem!important;}
+
+.grey-background        {background-color: #F1F1F1;}
+
+.card {
+    position: relative;
+    padding: 1rem 1.8rem;
+    background-color: #F1F1F1;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    min-height: 1rem;
+    border: 1px solid #FFFFFF;
+}
+
+.user-side {
+    text-align: center;
+    float: left;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.query-label {
+    border: 2px solid gray;
+    background-color: rgba(255,255,255,.8);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 300;
+    font-family: "Raleway", Helvetica, "sans-serif";
+    font-size: 1.2rem;
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.04rem;
+}
+
+
+.query-label:hover {
+    background-color: ghostwhite;
+}
+
+.query-img {
+    margin-bottom: 0.8rem;
+}
+
+.try-samples {
+    margin-bottom: 1.3rem;
+}
+
+.scrollmenu {
+    overflow: auto;
+    height: 220px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.diagnose-div{
+    margin-top: 4rem;
+}
+
+.classifier {
+    border: 2px solid gray;
+    background-color: rgba(255,255,255,.8);
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-weight: 300;
+    font-family: "Raleway", Helvetica, "sans-serif";
+    font-size: 1.2rem;
+    letter-spacing: 0.04rem;
+    outline: none;
+}
+
+.classifier:hover {
+    background-color: ghostwhite;
+}
+
+.diagnose-btn {
+    border: 2px solid gray;
+    background-color: rgba(255,255,255,.8);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 300;
+    font-family: "Raleway", Helvetica, "sans-serif";
+    font-size: 1.2rem;
+    letter-spacing: 0.04rem;
+}
+
+.diagnose-btn:hover {
+    background-color: ghostwhite;
+}
+
+
+.c-res            {padding-top: 2rem;}
+.c-res.md-padding {padding-top: 1rem;}
+.c-res.sm-padding {padding-top: 0.5rem;}
+.c-res.no-padding {padding-top: 0;}
+.c-res {margin-bottom: 0.5rem}
+
+.results{
+    text-align: center;
+}
+
+.gallery {
+    background-color: #A61E30;
+}
+
+.gallery img {
+    width: 320px;
+    height: 280px;
+}
+
+.responsive {
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    float: left;
+}
+
+.des {
+    text-align: center;
+    color: white;
+    width: 320px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    letter-spacing: 0.03rem;
+    padding: 0.5rem;
+}
+
+/* $MEDIA QUERIES */
+/* Extra small devices (phones, less than 768px) */
+/* This should be the default AKA no styles here */
+/*@media (min-width: @screen-xs-min) {}*/
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}

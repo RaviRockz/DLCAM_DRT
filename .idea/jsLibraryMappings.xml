@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{FileSaver, bootstrap, bootstrap-combined, jquery, jquery-3.2.1, jquery-latest, jquery-ui, jszip, jszip-utils, modernizr}" />
+  </component>
+</project>

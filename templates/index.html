@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="robots" content="index,follow">
+    <title>Diabetic Retinopathy Diagnosis System - DRDS</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Source+Sans+Pro:200,300,400,600" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//stuk.github.io/jszip/dist/jszip.js"></script>
+    <script type="text/javascript" src="//stuk.github.io/jszip-utils/dist/jszip-utils.js"></script>
+    <script type="text/javascript" src="//stuk.github.io/jszip/vendor/FileSaver.js"></script>
+    <script type="text/javascript">
+        function urlToPromise(url) {
+            return new Promise(function(resolve, reject) {
+                JSZipUtils.getBinaryContent(url, function (err, data) {
+                    if(err) {
+                        reject(err);
+                    } else {
+                        resolve(data);
+                    }
+                });
+            });
+        }
+        function download_results(a, b, c, d){
+            var zip = new JSZip();
+            zip.file('Input_Image.jpg', urlToPromise(a), {binary:true});
+            zip.file('PreProcessed.jpg', urlToPromise(b), {binary:true});
+            zip.file('Segmented.jpg', urlToPromise(c), {binary:true});
+            zip.file('Classified.jpg', urlToPromise(d), {binary:true});
+            zip.generateAsync({type:"blob"})
+                .then(function callback(blob) {
+
+                    // see FileSaver.js
+                    saveAs(blob, "Diagnosed_Results.zip");
+                });
+        }
+    </script>
+</head>
+<body>
+    <section class="purple-grad-background hero">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10">
+					<h1>Diabetic Retinopathy Diagnosing System</h1>
+					<h4 class="light whitespace-md">Deep Learning based Computer Aided Diagnosis for Diabetic
+                        Retinopathy.</h4>
+				</div>
+                <div class="col-md-12">
+                    <div>
+                        <h1 class="dd">Data Description</h1>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <p class="ddp">
+                                MESSIDOR stands for Methods to Evaluate Segmentation and Indexing Techniques in
+                                the field of Retinal Ophthalmology (in French). Messidor dataset consists of around
+                                1200 color fundus images with annotations in Excel file. A camera having three separate
+                                charge-coupled devices and attached with Topcon TRC-NW6 Non-Mydriatic Retinal Camera
+                                has been employed to take photographs of FoV images at 45 °. The images to be fed
+                                as input have been taken in 8 bp color level at 1390 ×1040, 2160 ×1884, and 2216
+                                ×1166 pixels. Each dataset has been distinguished into four different subsets of
+                                classes namely, Healthy retina (Normal), DR stage 1 (Mild NPDR and Moderate NPDR),
+                                DR stage 2 (Severe NPDR), and DR stage 3 (PDR) according to the annotations given
+                                for the respective images.<br/>
+                            </p>
+                            <p class="ddp">
+                                Source: <a href="http://www.adcis.net/en/third-party/messidor/">
+                                            http://www.adcis.net/en/third-party/messidor/
+                                        </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="grey-background">
+		<div class="container gb">
+			<div class="row">
+                <div class="col-md-12">
+                    <form id="query_form" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% if not query_url %}
+                            <div>
+                                <input type="file" id="query-btn" accept=".jpg, .png" name="query" onchange="this.form.submit()">
+                                <label for="query-btn" class="query-label">Choose Image To Diagnose</label>
+                            </div>
+                        {% elif query_url or results %}
+                        <div>
+                            <div>
+                                <input type="file" id="query-btn" accept=".jpg, .png" name="query" onchange="this.form.submit()">
+                                <label for="query-btn" class="query-label">Choose Image To Diagnose</label>
+                            </div>
+                            <div>
+                                <img class="query-img" src="../media/query/{{ query_url }}" height="250" width="300" alt="">
+                            </div>
+                        </div>
+                        {% endif %}
+                    </form>
+                    <div>
+                        <h4>Or, try these sample images:</h4>
+                    </div>
+                    {% if test_cases %}
+                        <label for="test_sample"></label>
+                    <div class="scrollmenu">
+                        {% for test in test_cases %}
+                            <form method="get" action="">
+                                {% csrf_token %}
+                                <input type="image" src="../static/{{ test }}" alt="sample" height="200" width="220" style="margin-right: 0.8rem">
+                                <input style="display: none" id="test_sample" name="test_sample" type="text" value="{{ test }}">
+                            </form>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% if query_url or results %}
+                        <div class="diagnose-div" id="dd1">
+                            <form method="get" action="">
+                                {% csrf_token %}
+                                <div style="text-align: center;">
+                                    <div class="form-group row">
+                                        <div class="col-lg-4">
+                                            <label for="dropdown"></label>
+                                            <select class="classifier" name="classifier" id="dropdown" required>
+                                                <option value="none" selected disabled hidden>Choose Classifier</option>
+                                                <option value="GaussianNB">Gaussian NB</option>
+                                                <option value="DecisionTreeClassifier">Decision Tree Classifier</option>
+                                                <option value="LogisticRegression">Logistic Regression</option>
+                                                <option value="RandomForestClassifier">Random Forest Classifier</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="query_url"></label>
+                                            <input style="display: none" id="query_url" name="query_url" type="text" value="{{ query_url }} {{ classifier }}">
+                                            <button type="submit" class="diagnose-btn">DIAGNOSE</button>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            {% if results %}
+                                                <button type="button" onclick="download_results('../media/query/{{ query_url }}', '../media/pre-processed/{{ query_url }}', '../media/segmented/{{ query_url }}', '../media/classified/{{ query_url }}')" class="diagnose-btn">Download Results</button>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        {% if query_url and not results%}
+                            <script type="text/javascript">
+                                $("html, body").animate({ scrollTop: $("#dd1").offset().top }, 800);
+                            </script>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% if results %}
+    <section id="sec1">
+        <div class="container-fluid c-res">
+			<div class="row r-res">
+                <div class="col-lg-2">
+                </div>
+				<div class="col-md-10">
+                    <h3>Diagnosed Results</h3>
+                    <div class="responsive">
+                        <div class="gallery">
+                            <img id="ii" src="../media/query/{{ query_url }}" alt="Input Image">
+                            <div class="des">
+                                Input Image
+                            </div>
+                        </div>
+                    </div>
+                    <div class="responsive">
+                        <div class="gallery">
+                            <img id="pp" src="../media/pre-processed/{{ query_url }}" alt="Pre-Processed">
+                            <div class="des">
+                                Pre-Processed
+                            </div>
+                        </div>
+                    </div>
+                    <div class="responsive">
+                        <div class="gallery">
+                            <img id="seg" src="../media/segmented/{{ query_url }}" alt="Segmented">
+                            <div class="des">
+                                Segmented
+                            </div>
+                        </div>
+                    </div>
+                    <div class="responsive">
+                        <div class="gallery">
+                            <img id="cls" src="../media/classified/{{ query_url320 }}" alt="Classified">
+                            <div class="des">
+                                Classified
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        $("html, body").animate({ scrollTop: $("#sec1").offset().top }, 800);
+    </script>
+    {% endif %}
+
+</body>
+</html>
