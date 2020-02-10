@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72aa296b-3445-4c92-b1ad-c56e6e27bda2" name="Default Changelist" comment="" />
+    <list default="true" id="72aa296b-3445-4c92-b1ad-c56e6e27bda2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLCAM_DRT/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DLCAM_DRT/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +40,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1XKR5ihGL7f44zBRJQNO1TW4y3E" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,8 +52,9 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/diabetic_retinopathy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -159,6 +168,7 @@
       <workItem from="1581258850902" duration="15000" />
       <workItem from="1581290448269" duration="1841000" />
       <workItem from="1581301238720" duration="714000" />
+      <workItem from="1581323487579" duration="522000" />
     </task>
     <servers />
   </component>
@@ -214,10 +224,10 @@
       <screen x="0" y="25" width="1920" height="966" />
     </state>
     <state width="1874" height="307" key="GridCell.Tab.1.right/0.25.1920.966@0.25.1920.966" timestamp="1581248823608" />
-    <state x="449" y="143" width="1022" height="732" key="SettingsEditor" timestamp="1580912313727">
+    <state x="449" y="143" width="1022" height="732" key="SettingsEditor" timestamp="1581323966527">
       <screen x="0" y="25" width="1920" height="966" />
     </state>
-    <state x="449" y="143" width="1022" height="732" key="SettingsEditor/0.25.1920.966@0.25.1920.966" timestamp="1580912313727" />
+    <state x="449" y="143" width="1022" height="732" key="SettingsEditor/0.25.1920.966@0.25.1920.966" timestamp="1581323966527" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1580804673249">
       <screen x="0" y="25" width="1920" height="966" />
     </state>

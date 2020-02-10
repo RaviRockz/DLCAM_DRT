@@ -24,7 +24,7 @@ SECRET_KEY = 'zq!d$&a82p^a6zo4z06m_+2l6%1_=y8fx=^&o*#064*ii+3tp('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dlcam_drt.com', '138.197.7.79']
 
 # Application definition
 
