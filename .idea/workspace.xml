@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72aa296b-3445-4c92-b1ad-c56e6e27bda2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DLCAM_DRT/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DLCAM_DRT/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,12 +165,24 @@
       <workItem from="1581258850902" duration="15000" />
       <workItem from="1581290448269" duration="1841000" />
       <workItem from="1581301238720" duration="714000" />
-      <workItem from="1581323487579" duration="522000" />
+      <workItem from="1581323487579" duration="2000000" />
     </task>
+    <task id="LOCAL-00001" summary="Second">
+      <created>1581324283476</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581324283476</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Second" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second" />
   </component>
   <component name="WindowStateProjectService">
     <state x="550" y="189" width="800" height="679" key="#HTTP_Proxy" timestamp="1580911458912">
@@ -188,6 +197,10 @@
       <screen x="0" y="25" width="1920" height="966" />
     </state>
     <state x="693" y="257" width="524" height="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1920.966@0.25.1920.966" timestamp="1581048348164" />
+    <state x="512" y="101" width="886" height="815" key="CommitChangelistDialog2" timestamp="1581324283388">
+      <screen x="0" y="25" width="1920" height="966" />
+    </state>
+    <state x="512" y="101" width="886" height="815" key="CommitChangelistDialog2/0.25.1920.966@0.25.1920.966" timestamp="1581324283388" />
     <state x="501" y="285" width="908" height="447" key="EditFileWatcherDialog" timestamp="1580999478186">
       <screen x="0" y="25" width="1920" height="966" />
     </state>
@@ -228,6 +241,10 @@
       <screen x="0" y="25" width="1920" height="966" />
     </state>
     <state x="449" y="143" width="1022" height="732" key="SettingsEditor/0.25.1920.966@0.25.1920.966" timestamp="1581323966527" />
+    <state x="555" y="244" width="800" height="530" key="Vcs.Push.Dialog.v2" timestamp="1581324299681">
+      <screen x="0" y="25" width="1920" height="966" />
+    </state>
+    <state x="555" y="244" width="800" height="530" key="Vcs.Push.Dialog.v2/0.25.1920.966@0.25.1920.966" timestamp="1581324299681" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1580804673249">
       <screen x="0" y="25" width="1920" height="966" />
     </state>
